@@ -1,9 +1,9 @@
 {
   "variables": {
     "do_token": "{{env `DIGITALOCEAN_TOKEN`}}",
-    "image_name": "lemp-20-04-snapshot-{{timestamp}}",
-    "apt_packages": "fail2ban mysql-server nginx php-apcu php-curl php-mysql php-fpm postfix python3-certbot-nginx software-properties-common",
-    "application_name": "LEMP",
+    "image_name": "wgdashboard-24-04-snapshot-{{timestamp}}",
+    "apt_packages": "wireguard wireguard-tools net-tools python3 python3-venv python3-pip",
+    "application_name": "WGDashboard",
     "application_version": ""
   },
   "sensitive-variables": ["do_token"],
@@ -11,8 +11,8 @@
     {
       "type": "digitalocean",
       "api_token": "{{user `do_token`}}",
-      "image": "ubuntu-20-04-x64",
-      "region": "nyc3",
+      "image": "ubuntu-24-04-x64",
+      "region": "sgp1",
       "size": "s-1vcpu-1gb",
       "ssh_username": "root",
       "snapshot_name": "{{user `image_name`}}"
@@ -24,16 +24,6 @@
       "inline": [
         "cloud-init status --wait"
       ]
-    },
-    {
-      "type": "file",
-      "source": "files/etc/",
-      "destination": "/etc/"
-    },
-    {
-      "type": "file",
-      "source": "files/var/",
-      "destination": "/var/"
     },
     {
       "type": "shell",
@@ -51,6 +41,11 @@
       ]
     },
     {
+      "type": "file",
+      "source": "files/etc/systemd/system/",
+      "destination": "/etc/systemd/system/"
+    },
+    {
       "type": "shell",
       "environment_vars": [
         "application_name={{user `application_name`}}",
@@ -61,8 +56,8 @@
         "LC_CTYPE=en_US.UTF-8"
       ],
       "scripts": [
-        "scripts/01-lemp.sh",
-        "scripts/02-ufw-nginx.sh",
+        "scripts/01-ufw.sh",
+        "scripts/02-install.sh",
         "scripts/03-force-ssh-logout.sh",
         "scripts/90-cleanup.sh",
         "scripts/99-img-check.sh"
