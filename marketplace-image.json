@@ -26,6 +26,11 @@
       ]
     },
     {
+      "type": "file",
+      "source": "files/etc/systemd/system/",
+      "destination": "/etc/systemd/system"
+    },
+    {
       "type": "shell",
       "environment_vars": [
         "DEBIAN_FRONTEND=noninteractive",
