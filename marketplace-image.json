@@ -4,7 +4,7 @@
     "image_name": "wgdashboard-22-04-snapshot-{{timestamp}}",
     "apt_packages": "wireguard wireguard-tools net-tools",
     "application_name": "WGDashboard",
-    "application_version": ""
+    "application_version": "4.1"
   },
   "sensitive-variables": ["do_token"],
   "builders": [
@@ -13,7 +13,7 @@
       "api_token": "{{user `do_token`}}",
       "image": "ubuntu-20-04-x64",
       "region": "nyc3",
-      "size": "s-1vcpu-1gb",
+      "size": "s-1vcpu-512mb-10gb",
       "ssh_username": "root",
       "snapshot_name": "{{user `image_name`}}"
     }
