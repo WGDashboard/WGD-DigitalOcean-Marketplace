@@ -41,11 +41,6 @@
       ]
     },
     {
-      "type": "file",
-      "source": "files/etc/systemd/system/",
-      "destination": "/etc/systemd/system/"
-    },
-    {
       "type": "shell",
       "environment_vars": [
         "application_name={{user `application_name`}}",
