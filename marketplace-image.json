@@ -16,15 +16,6 @@
       "size": "s-1vcpu-1gb",
       "ssh_username": "root",
       "snapshot_name": "{{user `image_name`}}"
-    },
-    {
-      "type": "digitalocean",
-      "api_token": "{{user `do_token`}}",
-      "image": "ubuntu-22-04-x64",
-      "region": "nyc3",
-      "size": "s-1vcpu-1gb",
-      "ssh_username": "root",
-      "snapshot_name": "{{user `image_name`}}"
     }
   ],
   "provisioners": [
