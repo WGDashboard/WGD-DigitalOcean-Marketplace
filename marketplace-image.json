@@ -31,6 +31,11 @@
       "destination": "/etc/systemd/system"
     },
     {
+      "type": "file",
+      "source": "files/firstrun",
+      "destination": "/var/lib/cloud/scripts/per-instance"
+    },
+    {
       "type": "shell",
       "environment_vars": [
         "DEBIAN_FRONTEND=noninteractive",
