@@ -63,7 +63,6 @@
       "scripts": [
         "scripts/01-ufw.sh",
         "scripts/02-install.sh",
-        "scripts/03-force-ssh-logout.sh",
         "scripts/90-cleanup.sh",
         "scripts/99-img-check.sh"
       ]
