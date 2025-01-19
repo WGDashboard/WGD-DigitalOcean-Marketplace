@@ -38,7 +38,7 @@
     {
       "type": "shell",
       "inline": [
-        "chmod +x /var/lib/cloud/scripts/per-instance/01-firstrun.sh"
+        "chmod 744 /var/lib/cloud/scripts/per-instance/01-firstrun.sh"
       ]
     },
     {
