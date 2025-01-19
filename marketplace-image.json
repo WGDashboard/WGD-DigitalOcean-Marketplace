@@ -27,7 +27,7 @@
     },
     {
       "type": "file",
-      "source": "files/firstrun",
+      "source": "files/firstrun/",
       "destination": "/var/lib/cloud/scripts/per-instance"
     },
     {
