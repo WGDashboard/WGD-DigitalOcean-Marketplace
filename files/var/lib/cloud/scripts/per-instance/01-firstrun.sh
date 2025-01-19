@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cd /root/WGDashboard/src
 { date; git pull; } >> ./log/update.txt
 
