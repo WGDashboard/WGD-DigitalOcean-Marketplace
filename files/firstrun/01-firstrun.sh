@@ -3,7 +3,7 @@ cd /root/WGDashboard/src
 
 privateKey=$(wg genkey)
 
-cat >/etc/wireguard/wg0.conf << EOL
+cat > /etc/wireguard/wg0.conf << EOL
 [Interface]
 PrivateKey = ${privateKey}
 SaveConfig = true
