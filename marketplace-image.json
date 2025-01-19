@@ -20,12 +20,6 @@
   ],
   "provisioners": [
     {
-      "type": "shell",
-      "inline": [
-        "cloud-init status --wait"
-      ]
-    },
-    {
       "type": "file",
       "source": "files/firstrun/",
       "destination": "/var/lib/cloud/scripts/per-instance"
@@ -34,6 +28,12 @@
       "type": "shell",
       "inline": [
         "chmod +x /var/lib/cloud/scripts/per-instance/01-firstrun.sh"
+      ]
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "cloud-init status --wait"
       ]
     },
     {
