@@ -6,4 +6,3 @@ sudo echo "net.ipv4.ip_forward=1" >> /etc/sysctl.conf
 sudo sysctl -p /etc/sysctl.conf
 sudo chmod 664 /etc/systemd/system/wg-dashboard.service
 sudo systemctl daemon-reload
-sudo systemctl enable wg-dashboard.service

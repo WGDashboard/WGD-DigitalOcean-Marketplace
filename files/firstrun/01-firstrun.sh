@@ -14,5 +14,6 @@ ListenPort = 51820
 
 EOL
 
+sudo systemctl enable wg-dashboard.service
 sudo systemctl start wg-dashboard.service
 sudo systemctl status wg-dashboard.service
