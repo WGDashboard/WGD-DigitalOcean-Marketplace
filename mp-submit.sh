@@ -6,4 +6,4 @@ APP_VERSION=$(python3 -c "import json; import urllib.request; data = urllib.requ
 echo "$IMG_ID"
 echo "$APP_VERSION"
 
-curl -X PATCH -H "Content-Type: application/json" -H "Authorization: Bearer ${DIGITALOCEAN_API_TOKEN}" -d "{\"reasonForUpdate\": \"new version\", \"version\": \"${APP_VERSION}\", \"imageId\": ${IMG_ID}}" https://api.digitalocean.com/api/v1/vendor-portal/apps/0592dfe168e6b43ec7916e3a
+curl -X PATCH \ -H "Content-Type: application/json" -H "Authorization: Bearer ${DIGITALOCEAN_API_TOKEN}" -d "{\"reasonForUpdate\": \"new version\", \"version\": \"${APP_VERSION}\", \"imageId\": ${IMG_ID}}" https://api.digitalocean.com/api/v1/vendor-portal/apps/0592dfe168e6b43ec7916e3a/
